@@ -12,10 +12,6 @@ The application's database consists of one main entity: Partner.
 ![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/ae36a027-6a16-4ca3-9eab-da6c13ae859a)
 
 
-**Relationships:
-One-to-Many relationship with Ingredient entity.**
-
-
 
 
 ## Technical Requirements
@@ -47,8 +43,7 @@ The application has a layered architecture, consisting of:
 
 
 ## API Reference
-
-
+![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/972e9547-0bc1-4553-a239-f3f11d5bc042)
 
 #### Get all partners
 
