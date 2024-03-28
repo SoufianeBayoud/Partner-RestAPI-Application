@@ -38,7 +38,7 @@ The application has a layered architecture, consisting of:
 + Controller layer: Responsible for the CRUD-operations and the HTTP requests.
 + Service layer: Responsible for the business logic
 + Repository layer: Responsible for the data access
-+ Exception:
++ Exception: Responsible for the error handling 
 
 
 
