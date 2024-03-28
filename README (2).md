@@ -54,6 +54,7 @@ The application has a layered architecture, consisting of:
 ## API Reference
 
 
+![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/ae36a027-6a16-4ca3-9eab-da6c13ae859a)
 
 #### Get all partners
 
