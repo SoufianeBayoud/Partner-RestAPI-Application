@@ -166,7 +166,4 @@ To run tests, run the following command
 ```
 
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
