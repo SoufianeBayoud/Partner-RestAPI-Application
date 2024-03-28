@@ -17,9 +17,9 @@ The application's database consists of one main entity: Partner.
 ## Technical Requirements
 
 ### Technology Stack
-+ Programming Language: Java 
++ Programming Language: Java 17
 + Build Automation: Maven
-+ Application Framework: Spring Boot
++ Application Framework: Spring Boot 3.2.3
 + Database: H2
 + Libraries: 
 ```spring-boot-starter-data-jpa
