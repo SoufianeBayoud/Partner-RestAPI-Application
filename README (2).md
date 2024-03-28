@@ -9,13 +9,8 @@ The application's database consists of one main entity: Partner.
 
 ### Recipe Entity Attributes:
 
-id: Long - Primary key auto-generated for each partner.
-companyName: String - Name of the partner.
-ref: String - Unique reference of the partner.
-locale: Locale - 	
-A valid Locale of the partner.
-Expires: Date - Timestamp indicating when the recipe was created.
-updatedAt: Date - Timestamp indicating when the recipe was last updated.
+![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/ae36a027-6a16-4ca3-9eab-da6c13ae859a)
+
 
 **Relationships:
 One-to-Many relationship with Ingredient entity.**
@@ -54,7 +49,6 @@ The application has a layered architecture, consisting of:
 ## API Reference
 
 
-![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/ae36a027-6a16-4ca3-9eab-da6c13ae859a)
 
 #### Get all partners
 
