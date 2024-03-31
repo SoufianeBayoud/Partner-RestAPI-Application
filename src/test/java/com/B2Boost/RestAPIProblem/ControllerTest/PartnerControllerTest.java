@@ -56,7 +56,7 @@ public class PartnerControllerTest {
 
         List<Partner> list = Arrays.asList(partner);
 
-        when(partnerService.getAllPartners()).thenReturn(list);
+        //when(partnerService.getAllPartners()).thenReturn(list);
         this.mockMvc.perform(get("/api/partners"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.size()", is(list.size())));
