@@ -22,15 +22,17 @@ The application's database consists of one main entity: Partner.
 + Application Framework: Spring Boot 3.2.3
 + Database: H2
 + Libraries: 
-```spring-boot-starter-data-jpa
+```
+spring-boot-starter-data-jpa
 spring-boot-starter-web
 springdoc-openapi-starter-webmvc-ui
+spring-boot-starter-test
+spring-boot-starter-validation
+spring-boot-starter-actuator
 h2
 junit
 mockito-core
 lombok
-spring-boot-starter-test
-spring-boot-starter-actuator
 ```
 ### Application Architecture
 The application has a layered architecture, consisting of: 
