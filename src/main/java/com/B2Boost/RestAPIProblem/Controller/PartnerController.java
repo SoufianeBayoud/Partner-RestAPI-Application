@@ -27,6 +27,7 @@ public class PartnerController {
         if (partners.isEmpty()) {
             throw new BadRequestException();
         }
+
         return new ResponseEntity<>(partnerService.getAllPartners(from, size), HttpStatus.OK);
     }
 

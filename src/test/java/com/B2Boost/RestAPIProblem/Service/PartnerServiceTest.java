@@ -33,8 +33,9 @@ public class PartnerServiceTest {
     private PartnerRepository partnerRepo;
 
     private Partner partner;
-    private int from = 0;
-    private int size = 10;
+    private static final int FROM = 0;
+
+    private static final int SIZE = 10;
 
     @BeforeEach
     void init(){
@@ -52,7 +53,7 @@ public class PartnerServiceTest {
 
         Page<Partner> page = new PageImpl<>(list);
         when(partnerRepo.findAll(any(Pageable.class))).thenReturn(page);
-        List<Partner> listOfPartners = partnerService.getAllPartners(from, size);
+        List<Partner> listOfPartners = partnerService.getAllPartners(FROM, SIZE);
         assertEquals(1, listOfPartners.size());
         assertNotNull(listOfPartners);
     }

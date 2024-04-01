@@ -38,8 +38,9 @@ public class PartnerControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     private Partner partner;
-    private int from = 0;
-    private int size = 10;
+    private static final int FROM = 0;
+
+    private static final int SIZE = 10;
 
     @BeforeEach
     void init(){
@@ -52,7 +53,7 @@ public class PartnerControllerTest {
     @Test
     void shouldFetchAllPartners() throws Exception {
         List<Partner> list = Arrays.asList(partner);
-        when(partnerService.getAllPartners(from, size)).thenReturn(list);
+        when(partnerService.getAllPartners(FROM, SIZE)).thenReturn(list);
         this.mockMvc.perform(get("/api/partners"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.size()", is(list.size())));

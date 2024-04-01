@@ -16,8 +16,9 @@ public class GlobalExceptionHandler  {
         ErrorResponse errorResponse = ErrorResponse
                 .builder()
                 .code(500)
-                .message("An internal server occurred")
+                .message("An internal server error occurred")
                 .build();
+
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -26,8 +27,9 @@ public class GlobalExceptionHandler  {
         ErrorResponse errorResponse = ErrorResponse
                 .builder()
                 .code(500)
-                .message("An internal server occurred because the id doesn't match")
+                .message("An internal server error occurred because the id doesn't match")
                 .build();
+
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
