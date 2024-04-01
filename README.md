@@ -27,6 +27,7 @@ spring-boot-starter-data-jpa
 spring-boot-starter-web
 springdoc-openapi-starter-webmvc-ui
 spring-boot-starter-test
+spring-boot-starter-validation
 spring-boot-starter-actuator
 h2
 junit
