@@ -7,7 +7,7 @@ This is a Partner API Application made for B2Boost. This application allows you 
 ### Database Model
 The application's database consists of one main entity: Partner.
 
-### Recipe Entity Attributes:
+### Partner Entity Attributes:
 
 ![image](https://github.com/SoufianeBayoud/Partner-RestAPI-Application/assets/101556223/ae36a027-6a16-4ca3-9eab-da6c13ae859a)
 
