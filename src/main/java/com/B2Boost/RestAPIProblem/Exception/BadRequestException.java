@@ -5,5 +5,4 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class BadRequestException extends RuntimeException {
 
-
 }

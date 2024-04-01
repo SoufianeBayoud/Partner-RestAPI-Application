@@ -2,7 +2,6 @@ package com.B2Boost.RestAPIProblem.Service;
 
 import com.B2Boost.RestAPIProblem.Model.Partner;
 import com.B2Boost.RestAPIProblem.Repository.PartnerRepository;
-import jakarta.servlet.http.Part;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,14 +34,15 @@ public class PartnerServiceTest {
     private PartnerRepository partnerRepo;
 
     private Partner partner;
+    private int from = 0;
+    private int size = 10;
 
     @BeforeEach
     void init(){
         partner = new Partner();
         partner.setId(1L);
         partner.setCompanyName("B2Boost");
-        partner.setRef("xxxxxx");
-//        partner.setLocale(Locale.of("en_GB"));
+        partner.setRef("XXXXXX");
 
     }
 
@@ -54,9 +53,9 @@ public class PartnerServiceTest {
 
         Page<Partner> page = new PageImpl<>(list);
         when(partnerRepo.findAll(any(Pageable.class))).thenReturn(page);
-        //List<Partner> listOfPartners = partnerService.getAllPartners();
-        //assertEquals(1, listOfPartners.size());
-        //assertNotNull(listOfPartners);
+        List<Partner> listOfPartners = partnerService.getAllPartners(from, size);
+        assertEquals(1, listOfPartners.size());
+        assertNotNull(listOfPartners);
     }
 
     @Test
@@ -79,27 +78,27 @@ public class PartnerServiceTest {
     }
 
     @Test
-    void UpdatePartner(){
-        partner.setCompanyName("Speos");
-        partner.setId(2L);
-        partner.setRef("xxxxxx1");
+    void updatePartner(){
+        Partner updatedPartnerTest = new Partner();
+        updatedPartnerTest.setId(2L);
+        updatedPartnerTest.setCompanyName("Speos");
+        updatedPartnerTest.setRef("XXXXXX1");
 
-        when(partnerRepo.save(any(Partner.class))).thenReturn(partner); //Pourquoi on doit Mock celui la ?
-        Partner updatedPartner = partnerService.UpdatePartner(partner);
+        when(partnerRepo.existsById(2L)).thenReturn(true);
+        when(partnerRepo.save(any(Partner.class))).thenReturn(updatedPartnerTest);
+        Partner updatedPartner = partnerService.updatePartner(updatedPartnerTest);
 
         assertNotNull(updatedPartner);
         assertEquals("Speos", updatedPartner.getCompanyName());
+        verify(partnerRepo).save(updatedPartnerTest);
     }
-
 
     @Test
-    void deletePartner(){
-        doNothing().when(partnerRepo).deleteById(anyLong());
-        partnerService.deletePartnerById(1L);
-        verify(partnerRepo, times(1)).deleteById(1L);
+    public void deletePartnerById() {
+        Long id = partner.getId();
+
+        when(partnerRepo.existsById(id)).thenReturn(true);
+        partnerService.deletePartnerById(id);
+        verify(partnerRepo, times(1)).deleteById(id);
     }
-
-
-
-
 }

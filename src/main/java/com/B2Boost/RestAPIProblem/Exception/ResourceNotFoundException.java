@@ -7,10 +7,5 @@ import lombok.Getter;
 @Getter
 public class ResourceNotFoundException extends RuntimeException{
     private Long id;
-    public ResourceNotFoundException(String message) {
-        super(message);
-    }
-
-
 
 }

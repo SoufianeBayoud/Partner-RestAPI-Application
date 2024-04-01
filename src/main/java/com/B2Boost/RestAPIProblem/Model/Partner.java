@@ -1,12 +1,8 @@
 package com.B2Boost.RestAPIProblem.Model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-
 
 import java.util.Date;
 import java.util.Locale;
@@ -18,7 +14,7 @@ import java.util.Locale;
 @Setter
 @ToString
 @Entity
-@Table(name = "Partner_table")
+@Table(name = "partner_table")
 public class Partner {
 
     @Id
@@ -41,5 +37,4 @@ public class Partner {
     @NotNull
     @Column(name = "ExpirationTime")
     private Date expires = new Date(2524608000000L);
-
 }
